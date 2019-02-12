@@ -1,0 +1,51 @@
+<div class="row">
+    <!-- <div class="col-xs-4 ">
+      <h3 className=""> New Recipe </h3>
+    </div> -->
+    <div class="col-xs-12">
+      <form  (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="name">Vehical Name</label>
+              <input  type="text" class="form-control" id="name" placeholder="Title">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="imagePath">Image URL</label>
+              <input  type="text" class="form-control" id="imagePath" placeholder="https://www.imagePath">
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <img class="img-responsive" src="{{imagePath}}" alt="">
+            </div>
+          </div>
+        </div> -->
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="description">Desciption</label>
+              <textarea  class="form-control" rows="6" type="text" id="desription" placeholder="Type here ... "></textarea>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-xs-4">
+            <h3>
+              Properties
+            </h3>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+        </div>
+      </form>
+    </div>
+  </div>
