@@ -2,13 +2,13 @@
     <!-- <div class="col-xs-4 ">
       <h3 className=""> New Recipe </h3>
     </div> -->
-    <div class="col-xs-12">
-      <form  (ngSubmit)="onSubmit()">
+    <div  class="col-xs-12">
+      <form  [formGroup]="vehicalEditForm1" (ngSubmit)="onSubmit()">
         <div class="row">
           <div class="col-xs-12">
             <div class="form-group">
               <label for="name">Vehical Name</label>
-              <input  type="text" class="form-control" id="name" placeholder="Title">
+              <input  formControlName="name" type="text" class="form-control" id="imagepath" placeholder="Title">
             </div>
           </div>
         </div>
@@ -16,7 +16,7 @@
           <div class="col-xs-12">
             <div class="form-group">
               <label for="imagePath">Image URL</label>
-              <input  type="text" class="form-control" id="imagePath" placeholder="https://www.imagePath">
+              <input  formControlName="imagepath" type="text" class="form-control" id="imagePath" placeholder="https://www.imagePath">
             </div>
           </div>
         </div>
@@ -31,21 +31,14 @@
           <div class="col-xs-12">
             <div class="form-group">
               <label for="description">Desciption</label>
-              <textarea  class="form-control" rows="6" type="text" id="desription" placeholder="Type here ... "></textarea>
+              <textarea  formControlName="description" class="form-control" rows="6" type="text" id="desription" placeholder="Type here ... "></textarea>
             </div>
           </div>
         </div>
-        <br>
-        <div class="row">
-          <div class="col-xs-4">
-            <h3>
-              Properties
-            </h3>
-          </div>
-        </div>
-        <br>
-        <div class="row">
+        <div class=" pull-right btn-position-save">
+            <button [disabled]='!vehicalEditForm1.valid' type="submit" class="btn btn-primary">Save</button>
+            <button (click)="onCancel()" type="button" class="btn btn-warning">Cancel</button>
         </div>
       </form>
-    </div>
+    </div>   
   </div>
