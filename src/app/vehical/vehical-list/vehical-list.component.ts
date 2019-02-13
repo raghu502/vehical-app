@@ -13,6 +13,11 @@ export class VehicalListComponent implements OnInit {
   constructor(private vehicalService: VehicalService) { }
 
   ngOnInit() {
+    this.vehicalService.vehicalChanged.subscribe(
+      (vehicals: Vehical[]) => {
+        this.vehicals = vehicals
+      }
+    )
     this.vehicals = this.vehicalService.getVehicals();
   }
 }

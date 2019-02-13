@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Vehical } from '../model/vehical';
 import { Properties } from '../model/properties';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class VehicalService {
+
+  vehicalChanged = new Subject<Vehical[]>();
 
   constructor() { }
   vehicals: Vehical[] = [
@@ -40,11 +43,12 @@ export class VehicalService {
   }
 
   updateVehical(id: number, newVehical: Vehical) {
-    console.log(id)
-    console.log(newVehical)
+    this.vehicals[id] = newVehical;
+    this.vehicalChanged.next(this.vehicals.slice());
   }
   addVehical(vehical: Vehical) {
-    console.log(vehical)
+    this.vehicals.push(vehical);
+    this.vehicalChanged.next(this.vehicals.slice());
   }
 
 }

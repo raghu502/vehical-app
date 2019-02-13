@@ -45,15 +45,15 @@ export class VehicalAddEditComponent implements OnInit {
   }
 
   onSubmit() {
-    const newVehical = new Vehical(this.vehicalEditForm1['name'],this.vehicalEditForm1['imagepath'],this.vehicalEditForm1['description'],null)
-    console.log(newVehical);
-    // if (!this.newForm) {
-    //   this.vehicalService.updateVehical(this.id, newVehical);
-    //   this.router.navigate(['/vehical', this.id]);
-    // } else {
-    //   this.vehicalService.addVehical(newVehical);
-    //   this.router.navigate(['/vehical'])
-    // }
+    const newVehical = new Vehical(this.vehicalEditForm1.value['name'],this.vehicalEditForm1.value['description'],this.vehicalEditForm1.value['imagepath'],null)
+    
+    if (!this.newForm) {
+      this.vehicalService.updateVehical(this.id, newVehical);
+      this.router.navigate(['/vehical', this.id]);
+    } else {
+      this.vehicalService.addVehical(newVehical);
+      this.router.navigate(['/vehical'])
+    }
   }
 
   onCancel() {
